@@ -1,0 +1,794 @@
+<p class="auto-cursor-target">
+  <br/>
+</p>
+<ac:structured-macro ac:macro-id="8f67a735-2590-4aab-bd9f-1b42ef61130d" ac:name="confiform" ac:schema-version="1">
+  <ac:parameter ac:name="formName">ProductRegistration</ac:parameter>
+  <ac:parameter ac:name="registrationFormTitle">CS&amp;A Product Registration</ac:parameter>
+  <ac:rich-text-body>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="bfb07898-56aa-4862-b3b0-a6218807625e" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:350px;</ac:parameter>
+        <ac:parameter ac:name="fieldName">ProductLine</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Product Line</ac:parameter>
+        <ac:parameter ac:name="values">false[1=GMAx|2=PAPPA|3=CTC|]</ac:parameter>
+        <ac:parameter ac:name="extras">label;false</ac:parameter>
+        <ac:parameter ac:name="type">select2</ac:parameter>
+        <ac:parameter ac:name="required">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="2cebac7b-025c-4ced-ac8c-2b2f163cc8d8" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:350px;</ac:parameter>
+        <ac:parameter ac:name="fieldName">Product</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Product</ac:parameter>
+        <ac:parameter ac:name="values">[1197757954|ProductCreate|ProductCreate|true||]</ac:parameter>
+        <ac:parameter ac:name="type">smartselect2</ac:parameter>
+        <ac:parameter ac:name="required">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="e84be242-b736-47c0-a2ef-538db4c1dd87" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px; font-weight: bold;</ac:parameter>
+        <ac:parameter ac:name="fieldName">ScoringResult</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Scoring Result</ac:parameter>
+        <ac:parameter ac:name="type">number</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="1a43be8a-8bac-4e3f-a836-632dad4a7187" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:100px;font-weight:bold;</ac:parameter>
+        <ac:parameter ac:name="fieldName">ScoringColor</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Scoring RAG</ac:parameter>
+        <ac:parameter ac:name="values">false[success=Green|moved=Yellow|error=Red|]</ac:parameter>
+        <ac:parameter ac:name="type">text</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <strong>Service Availability</strong>
+    </p>
+    <p class="auto-cursor-target">Definition of Service Availability <ac:structured-macro ac:macro-id="ea715291-b33a-461c-9d58-643e72774be7" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="fieldName">ServiceAvailable</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Service ID Available</ac:parameter>
+        <ac:parameter ac:name="values">true[0=Yes|1=No|]</ac:parameter>
+        <ac:parameter ac:name="type">radio_group</ac:parameter>
+        <ac:parameter ac:name="required">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Value if Yes <ac:structured-macro ac:macro-id="a30f6761-1a0c-482b-a3e6-e754eac079ec" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">ServiceAvailableDefYes</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Yes</ac:parameter>
+        <ac:parameter ac:name="values">0</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Value if No <ac:structured-macro ac:macro-id="01d88af9-2948-4173-b44f-b37df93b642c" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">ServiceAvailableDefNo</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">No</ac:parameter>
+        <ac:parameter ac:name="values">8</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro> <span>|</span>
+    </p>
+    <p class="auto-cursor-target">Calculation <ac:structured-macro ac:macro-id="0812842d-ab97-4b2a-b481-37de9c7c5cbb" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">ServiceAvailableResult=IF(ZEROIFEMPTY("[entry.ServiceAvailable]")=0,ZEROIFEMPTY("[entry.ServiceAvailableDefYes]"),ZEROIFEMPTY("[entry.ServiceAvailableDefNo]"))</ac:parameter>
+        <ac:parameter ac:name="action">Set expression</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">ServiceAvailableDefYes,ServiceAvailableDefNo,ServiceAvailable</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Result <ac:structured-macro ac:macro-id="6bd68aef-fd4d-480f-a8db-bcfe00bc13b8" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;background-color:#f5f5dc</ac:parameter>
+        <ac:parameter ac:name="fieldName">ServiceAvailableResult</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Service Available Result</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <ac:structured-macro ac:macro-id="def12c2e-ca3b-4f1c-b7d8-324de2bbbf84" ac:name="html" ac:schema-version="1">
+      <ac:plain-text-body><![CDATA[(function() {
+  // Replace "valueToReset" with the name of the value you want to reset
+  var valueToReset = "ScoringResult";
+  
+  // Create a new button element
+  var resetButton = document.createElement("button");
+  
+  // Set the button text and style
+  resetButton.textContent = "Reset Value";
+  resetButton.style.backgroundColor = "#007bff";
+  resetButton.style.color = "#fff";
+  resetButton.style.padding = "10px 20px";
+  resetButton.style.border = "none";
+  resetButton.style.borderRadius = "5px";
+  
+  // Add a click event listener to the button
+  resetButton.addEventListener("click", function() {
+    // Get the input field element for the value to reset
+    var inputField = document.querySelector("[name='" + ScoringResult + "']");
+    
+    // Reset the value by setting its value to an empty string
+    if (inputField) {
+      inputField.value = "";
+    }
+  });
+  
+  // Find the location in the form where you want to add the button
+  var buttonLocation = document.querySelector(".confiforms-field[data-fieldname='buttonLocation']");
+  
+  // Add the button to the form
+  if (buttonLocation) {
+    buttonLocation.appendChild(resetButton);
+  }
+})();]]></ac:plain-text-body>
+    </ac:structured-macro>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="5f547231-746c-46c0-8f27-b137195330df" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="fieldName">ResetButton</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Reset values</ac:parameter>
+        <ac:parameter ac:name="type">action_button</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="c8424d6a-fb35-4475-89d1-8e3e0c77f467" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">valueToReset</ac:parameter>
+        <ac:parameter ac:name="action">Run custom JavaScript</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">ResetValue</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+    <ac:structured-macro ac:macro-id="c6322772-7e1f-4f17-a815-001a6017e629" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+      <ac:parameter ac:name="condition">ServiceAvailable:0 AND ServiceNowID:[empty]</ac:parameter>
+      <ac:parameter ac:name="fieldName">ServiceNowID requires a value to be set when "makeRequired" field is checked</ac:parameter>
+      <ac:parameter ac:name="action">Validation rule</ac:parameter>
+    </ac:structured-macro>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="e57c319a-24c5-4f13-b957-209186608d7c" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="condition">ServiceAvailable:0</ac:parameter>
+        <ac:parameter ac:name="values">makeRequired(formName, formId);</ac:parameter>
+        <ac:parameter ac:name="action">Run custom JavaScript</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">ServiceAvailable</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="5d74c952-739d-424d-8552-b08a9800dc4c" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="condition">ServiceAvailable:1</ac:parameter>
+        <ac:parameter ac:name="values">removeRequired(formName, formId);</ac:parameter>
+        <ac:parameter ac:name="action">Run custom JavaScript</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">ServiceAvailable</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="eda91f59-9697-4f59-9ae4-e9b6d7acfd49" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:350px;</ac:parameter>
+        <ac:parameter ac:name="fieldName">ServiceNowID</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Service Now ID</ac:parameter>
+        <ac:parameter ac:name="type">text</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">YES<ac:structured-macro ac:macro-id="bd8c35b8-7187-4e66-b022-eb7945467c50" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">SystemArchitectureYes</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">System Architecture (Yes)</ac:parameter>
+        <ac:parameter ac:name="values">0</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">NO <ac:structured-macro ac:macro-id="44c77769-9b00-4e5d-9f1c-dfe7beeaa583" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">SystemArchitectureNo</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">System Architecture (No)</ac:parameter>
+        <ac:parameter ac:name="values">1</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="2d40448c-abd5-4659-88ba-32e1a83a1760" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="hideIfEmpty">true</ac:parameter>
+        <ac:parameter ac:name="fieldName">SystemArchitecture</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">System Architecture</ac:parameter>
+        <ac:parameter ac:name="values">true[0=Yes|1=No|]</ac:parameter>
+        <ac:parameter ac:name="type">radio_group</ac:parameter>
+        <ac:parameter ac:name="required">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="e322ad11-f915-430c-946e-ca94fbfab9b1" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">SystemArchitectureResult=IF(ZEROIFEMPTY("[entry.SystemArchitecture]")=0,ZEROIFEMPTY("[entry.SystemArchitectureYes]"),ZEROIFEMPTY("[entry.SystemArchitectureNo]"))</ac:parameter>
+        <ac:parameter ac:name="action">Set expression</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">SystemArchitectureYes,SystemArchitectureNo,SystemArchitecture</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="5d68147a-e8ca-4bfb-962f-b2349d27e841" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;background-color:#f5f5dc</ac:parameter>
+        <ac:parameter ac:name="fieldName">SystemArchitectureResult</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">System Architecture Result</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Data Architecture Yes<ac:structured-macro ac:macro-id="fc08acd4-8a33-46c4-94d9-04210b3ce311" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">DataArchitectureYes</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Data Architecture Available (Yes)</ac:parameter>
+        <ac:parameter ac:name="values">0</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Data Architecture No<ac:structured-macro ac:macro-id="f5b38fd8-300f-4b51-be14-7bb11cdb2abf" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">DataArchitectureNo</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Data Architecture Available (No)</ac:parameter>
+        <ac:parameter ac:name="values">1</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="9a9bc8f4-ff08-4f5b-aa5d-7e3b670fbe54" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="fieldName">DataArchitecture</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Data Architecture</ac:parameter>
+        <ac:parameter ac:name="values">true[0=Yes|1=No|]</ac:parameter>
+        <ac:parameter ac:name="type">radio_group</ac:parameter>
+        <ac:parameter ac:name="required">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="8709c097-cc61-430e-8f87-c222b63ccb16" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">DataArchitectureResult=IF(ZEROIFEMPTY("[entry.DataArchitecture]")=0,ZEROIFEMPTY("[entry.DataArchitectureYes]"),ZEROIFEMPTY("[entry.DataArchitectureNo]"))</ac:parameter>
+        <ac:parameter ac:name="action">Set expression</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">DataArchitectureYes,DataArchitectureNo,DataArchitecture</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="9e70f506-3b80-4099-8afc-04279860ad14" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;background-color:#f5f5dc</ac:parameter>
+        <ac:parameter ac:name="fieldName">DataArchitectureResult</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Data Architecture Result</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Technical Architecture</p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="58b640df-8ea6-458e-b73b-bbfe96573aff" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">TechnicalArchitectureYes</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Technical Architecture Available (Yes)</ac:parameter>
+        <ac:parameter ac:name="values">0</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="2f3bde15-daed-4a1c-aaec-ae2a8d38fb91" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">TechnicalArchitectureNo</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Technical Architecture Available (No)</ac:parameter>
+        <ac:parameter ac:name="values">1</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="16b6859e-80e7-4b3d-bf78-8413ad0aed69" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="fieldName">TechnicalArchitecture</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Technical Architecture</ac:parameter>
+        <ac:parameter ac:name="values">true[0=Yes|1=No|]</ac:parameter>
+        <ac:parameter ac:name="type">radio_group</ac:parameter>
+        <ac:parameter ac:name="required">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="45705a60-c817-4e14-bf91-bf80e02b7d58" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">TechnicalArchitectureResult=IF(ZEROIFEMPTY("[entry.TechnicalArchitecture]")=0,ZEROIFEMPTY("[entry.TechnicalArchitectureYes]"),ZEROIFEMPTY("[entry.TechnicalArchitectureNo]"))</ac:parameter>
+        <ac:parameter ac:name="action">Set expression</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">TechnicalArchitectureYes,TechnicalArchitectureNo,TechnicalArchitecture</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="3f3d50c1-f272-4c7b-ab4d-eeddc5a1af58" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;background-color:#f5f5dc</ac:parameter>
+        <ac:parameter ac:name="fieldName">TechnicalArchitectureResult</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Technical Architecture Result</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Tech Stack Current</p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="ca590927-cc55-4906-80db-5bfad39bc3b2" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">TechStackCurrentYes</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Tech Stack Current (Yes)</ac:parameter>
+        <ac:parameter ac:name="values">0</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="2b0750d4-d2f3-4af9-854e-393ba00e2893" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">TechStackCurrentNo</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Tech Stack Current (No)</ac:parameter>
+        <ac:parameter ac:name="values">1</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="e966bcdf-ecc7-4916-a8ba-09687c562dba" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="fieldName">TechStackCurrent</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Tech Stack Current</ac:parameter>
+        <ac:parameter ac:name="values">true[0=Yes|1=No|]</ac:parameter>
+        <ac:parameter ac:name="type">radio_group</ac:parameter>
+        <ac:parameter ac:name="required">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="795906e3-c25b-4ebc-9f8a-bf023e84f126" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">TechStackCurrentResult=IF(ZEROIFEMPTY("[entry.TechStackCurrent]")=0,ZEROIFEMPTY("[entry.TechStackCurrentYes]"),ZEROIFEMPTY("[entry.TechStackCurrentNo]"))</ac:parameter>
+        <ac:parameter ac:name="action">Set expression</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">TechStackCurrentYes,TechStackCurrentNo,TechStackCurrent</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="12c6f9d2-eb95-4c1f-aa01-e8c49868a362" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;background-color:#f5f5dc</ac:parameter>
+        <ac:parameter ac:name="fieldName">TechStackCurrentResult</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Tech Stack Current Result</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">BlueSky Section</p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="9c6bc206-54f5-4676-96cb-7b77f943f374" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">BlueskyAssessmentYes</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Bluesky Assessment (Yes)</ac:parameter>
+        <ac:parameter ac:name="values">0</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="8d7dbfbb-36a9-4469-942a-e7387db42c0e" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">BlueskyAssessmentNo</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Bluesky Assessment (No)</ac:parameter>
+        <ac:parameter ac:name="values">1</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p>
+      <ac:structured-macro ac:macro-id="d880064d-86d0-4798-bc59-072ee4276af4" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="fieldName">BlueskyAssessmentCompleted</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Bluesky Assessment Completed</ac:parameter>
+        <ac:parameter ac:name="values">true[0=Yes|1=No|]</ac:parameter>
+        <ac:parameter ac:name="type">radio_group</ac:parameter>
+        <ac:parameter ac:name="required">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p>
+      <ac:structured-macro ac:macro-id="1186785f-eabc-4527-9950-bba43adca52f" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">BlueskyAssessmentResult=IF(ZEROIFEMPTY("[entry.BlueskyAssessmentCompleted]")=0,ZEROIFEMPTY("[entry.BlueskyAssessmentYes]"),ZEROIFEMPTY("[entry.BlueskyAssessmentNo]"))</ac:parameter>
+        <ac:parameter ac:name="action">Set expression</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">BlueskyAssessmentYes,BlueskyAssessmentNo,BlueskyAssessmentCompleted</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p>
+      <ac:structured-macro ac:macro-id="92a646c4-47f9-463a-9cdd-6ca688c6c8bd" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;background-color:#f5f5dc</ac:parameter>
+        <ac:parameter ac:name="fieldName">BlueskyAssessmentResult</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Bluesky Assessment Result</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Source Code Manager Active</p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="bb349a7c-3139-4b58-b6de-b312595e4e53" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">SourceCodeManagerActiveYes</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Source Code Manager Active (Yes)?</ac:parameter>
+        <ac:parameter ac:name="values">0</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="9462feb3-3e06-462b-b144-5fc0ffe56b61" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">SourceCodeManagerActiveNo</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Source Code Manager Active (No)?</ac:parameter>
+        <ac:parameter ac:name="values">1</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="36e2bbe8-37b8-40e5-88b4-4ad562e5697b" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="fieldName">SourceCodeManagerActive</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Source Code Manager Active</ac:parameter>
+        <ac:parameter ac:name="values">true[0=Yes|1=No|]</ac:parameter>
+        <ac:parameter ac:name="type">radio_group</ac:parameter>
+        <ac:parameter ac:name="required">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="88240838-0b68-4445-9cbe-e71da3e840e8" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">SourceCodeManagerActiveResult=IF(ZEROIFEMPTY("[entry.SourceCodeManagerActive]")=0,ZEROIFEMPTY("[entry.SourceCodeManagerActiveYes]"),ZEROIFEMPTY("[entry.SourceCodeManagerActiveNo]"))</ac:parameter>
+        <ac:parameter ac:name="action">Set expression</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">SourceCodeManagerActiveYes,SourceCodeManagerActiveNo,SourceCodeManagerActive</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="06386ddd-2583-4ae0-87b9-f1130959b7fb" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;background-color:#f5f5dc</ac:parameter>
+        <ac:parameter ac:name="fieldName">SourceCodeManagerActiveResult</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Source Code Manager Active Result</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">SDLC Section</p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="7c176c3c-efb4-4d07-84f1-0602678ba479" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">SDLCDocumentedYes</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">SDLC Documentation Completed (No)?</ac:parameter>
+        <ac:parameter ac:name="values">0</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="7a8dc0b0-8898-4a04-aa2d-9fa77a6cc4fe" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">SDLCDocumentedNo</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">SDLC documentation completed (No)</ac:parameter>
+        <ac:parameter ac:name="values">1</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="202db567-43e3-4772-9993-ed0b77335b5c" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="fieldName">SDLCDocumented</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">SDLC documentation completed?</ac:parameter>
+        <ac:parameter ac:name="values">true[0=Yes|1=No|]</ac:parameter>
+        <ac:parameter ac:name="type">radio_group</ac:parameter>
+        <ac:parameter ac:name="required">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="1cb5b5f5-c31f-47e4-a967-53b55b6101ae" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">SDLCDocumentedResult=IF(ZEROIFEMPTY("[entry.SDLCDocumented]")=0,ZEROIFEMPTY("[entry.SDLCDocumentedYes]"),ZEROIFEMPTY("[entry.SDLCDocumentedNo]"))</ac:parameter>
+        <ac:parameter ac:name="action">Set expression</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">SDLCDocumentedYes,SDLCDocumentedNo,SDLCDocumented</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="b347b5e6-6a68-4704-a466-d7356844c1f0" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;background-color:#f5f5dc</ac:parameter>
+        <ac:parameter ac:name="fieldName">SDLCDocumentedResult</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">SDLC Documentation completed Result</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="b21d1f66-2291-4f51-93ba-f027a354299c" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">ScoringResult=ZEROIFEMPTY("[entry.ServiceAvailableResult]") + ZEROIFEMPTY("[entry.TicketsScoringResult]") + ZEROIFEMPTY("[entry.TicketsScoringResultYellow]") + ZEROIFEMPTY("[entry.TicketsScoringResultRed]") + ZEROIFEMPTY("[entry.DataArchitectureResult]") + ZEROIFEMPTY("[entry.TechnicalArchitectureResult]") + ZEROIFEMPTY("[entry.BlueskyAssessmentResult]") + ZEROIFEMPTY("[entry.TechStackCurrentResult]") + ZEROIFEMPTY("[entry.SystemArchitectureResult]") + ZEROIFEMPTY("[entry.SDLCDocumentedResult]") + ZEROIFEMPTY("[entry.SourceCodeManagerActiveResult]")</ac:parameter>
+        <ac:parameter ac:name="action">Set expression</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">ServiceAvailableResult,TicketsScoringResult,TicketsScoringResultYellow,TicketsScoringResultRed,DataArchitectureResult,TechnicalArchitectureResult,BlueskyAssessmentResult,TechStackCurrentResult,SystemArchitectureResult,SDLCDocumentedResult,SourceCodeManagerActiveResult</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="ec204e62-a329-4b8e-8fa3-6547ac5d13d7" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">RAGGreenTo</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">RAG Green To</ac:parameter>
+        <ac:parameter ac:name="values">2</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="e3fbf2a3-3e3b-4857-b1bc-842fc03c3bb3" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">RAGYellowFrom</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">RAG Yellow From</ac:parameter>
+        <ac:parameter ac:name="values">3</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="e17a3b59-0827-4ae1-8dd4-a9057bbde9e9" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">RAGYellowTo</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">RAG Yellow To</ac:parameter>
+        <ac:parameter ac:name="values">6</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="af2fc84c-9385-4a4b-b20a-d374a92d9603" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">RAGRedFrom</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">RAG Red From</ac:parameter>
+        <ac:parameter ac:name="values">7</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="b66ca0f6-2b19-4a18-8297-51aeb71a2da6" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">ScoringColor=IF([entry.ScoringResult]&lt;=[entry.RAGGreenTo],Green,IF(([entry.ScoringResult]&gt;=[entry.RAGYellowFrom]) &amp;&amp; ([entry.ScoringResult]&lt;=[entry.RAGYellowTo]),Yellow,IF(([entry.ScoringResult]&gt;=[entry.RAGRedFrom]),Red,0)))</ac:parameter>
+        <ac:parameter ac:name="action">Set expression</ac:parameter>
+        <ac:parameter ac:name="onUserActionOnly">true</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">ScoringResult,RAGGreenTo,RAGYellowFrom,RAGYellowTo,RAGRedFrom</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="186496f5-4d3d-4dcc-968e-54823c78c4ca" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:350px;</ac:parameter>
+        <ac:parameter ac:name="fieldName">TicketsTrend</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">What is the trend of tickets</ac:parameter>
+        <ac:parameter ac:name="values">false[0=Growing|1=Stable|2=Reducing|]</ac:parameter>
+        <ac:parameter ac:name="type">select2</ac:parameter>
+        <ac:parameter ac:name="required">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="bfe54bf7-aed7-41ff-b2c7-13d557d00434" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="condition">TicketsTrend:0 OR TicketsTrend:2</ac:parameter>
+        <ac:parameter ac:name="fieldName">Average,TicketsM,TicketsM1,TicketsM2,TicketsM3,TicketsM4,TicketsM5</ac:parameter>
+        <ac:parameter ac:name="action">Show field</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">TicketsTrend</ac:parameter>
+        <ac:parameter ac:name="withReverseRule">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="4628862e-dd6f-4282-b998-41d65bfbdc1b" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="condition">TicketsTrend:1</ac:parameter>
+        <ac:parameter ac:name="fieldName">AverageManual</ac:parameter>
+        <ac:parameter ac:name="action">Show field</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">TicketsTrend</ac:parameter>
+        <ac:parameter ac:name="withReverseRule">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="f5af1683-0caa-4c3d-bc15-773a3721168a" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="condition">TicketsTrend:0 OR TicketsTrend:2</ac:parameter>
+        <ac:parameter ac:name="fieldName">AverageManual</ac:parameter>
+        <ac:parameter ac:name="values">AverageManual:0</ac:parameter>
+        <ac:parameter ac:name="action">Reset value</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">TicketsTrend</ac:parameter>
+        <ac:parameter ac:name="withReverseRule">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="1e10c289-1b93-4e3e-bac0-83911565f5a1" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="condition">TicketsTrend:1</ac:parameter>
+        <ac:parameter ac:name="fieldName">Average,TicketsM,TicketsM1,TicketsM2,TicketsM3,TicketsM4,TicketsM5</ac:parameter>
+        <ac:parameter ac:name="values">Average:0</ac:parameter>
+        <ac:parameter ac:name="action">Reset value</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">TicketsTrend</ac:parameter>
+        <ac:parameter ac:name="withReverseRule">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="725a0cc3-036b-46d5-b509-e8a153560a71" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;</ac:parameter>
+        <ac:parameter ac:name="fieldName">TicketsM</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Number of tickets 1 month ago</ac:parameter>
+        <ac:parameter ac:name="type">number</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="95a95ffe-08a8-4f34-9975-e720cb99b54a" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;</ac:parameter>
+        <ac:parameter ac:name="fieldName">TicketsM1</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Tickets 2 months ago</ac:parameter>
+        <ac:parameter ac:name="type">number</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="9882c70f-d902-48f4-beb1-3d532d80ac75" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;</ac:parameter>
+        <ac:parameter ac:name="fieldName">TicketsM2</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Tickets 3 months ago</ac:parameter>
+        <ac:parameter ac:name="type">number</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="bcd0c434-e9a3-4d8a-baac-d431b94a5fc7" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;</ac:parameter>
+        <ac:parameter ac:name="fieldName">TicketsM3</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Tickets 4 months ago</ac:parameter>
+        <ac:parameter ac:name="type">number</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="7bcd1ef0-bb5c-40f7-9a92-8c0c5e3f4abb" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;</ac:parameter>
+        <ac:parameter ac:name="fieldName">TicketsM4</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Tickets 5 months ago</ac:parameter>
+        <ac:parameter ac:name="type">number</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="8213b289-3a29-47d1-a34c-4ae565f4c34d" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;</ac:parameter>
+        <ac:parameter ac:name="fieldName">TicketsM5</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Tickets 6 months ago</ac:parameter>
+        <ac:parameter ac:name="type">number</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="23477be8-6b8f-4c3e-9a28-46656094040e" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">background-color:#f2f2f2;width:50px;</ac:parameter>
+        <ac:parameter ac:name="fieldName">SumofTickets</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Summary of all tickets last 6 months</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="d12a036c-3c57-4c59-a330-bc0901c1a972" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">SumofTickets=ZEROIFEMPTY("[entry.TicketsM]") + ZEROIFEMPTY("[entry.TicketsM1]") + ZEROIFEMPTY("[entry.TicketsM2]") + ZEROIFEMPTY("[entry.TicketsM3]") + ZEROIFEMPTY("[entry.TicketsM4]") + ZEROIFEMPTY("[entry.TicketsM5]")</ac:parameter>
+        <ac:parameter ac:name="action">Set expression</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">TicketsM,TicketsM1,TicketsM2,TicketsM3,TicketsM4,TicketsM5</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="684a6404-17ea-4b66-b698-a6f1371032f4" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="fieldName">numberofrecords</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Number of Records</ac:parameter>
+        <ac:parameter ac:name="values">6</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="4970e732-8ff1-4be1-a00f-454c4a5213cd" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;</ac:parameter>
+        <ac:parameter ac:name="fieldName">Average</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Average Number of Tickets (Calculated)</ac:parameter>
+        <ac:parameter ac:name="type">number</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="7fbc1311-5bf5-4f0f-af76-235bccf36a7a" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">AverageManual</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Average Number of Tickets (Manual)</ac:parameter>
+        <ac:parameter ac:name="type">number</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="1e6d8dec-c80e-4eba-9f6c-fd1435f11ce8" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">CopyAverage=ZEROIFEMPTY("[entry.Average]") + ZEROIFEMPTY("[entry.AverageManual]")</ac:parameter>
+        <ac:parameter ac:name="action">Set expression</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">Average,AverageManual</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="2f3f14b6-299e-45a1-9dd4-e5db719ba90f" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">CopyAverage</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Copy Average</ac:parameter>
+        <ac:parameter ac:name="extras">[entry.Average] + [entry.AverageManual]</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+        <ac:parameter ac:name="required">true</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <ac:structured-macro ac:macro-id="46b1549c-78af-44dc-9258-15810c631b94" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">Average=ROUND(ZEROIFEMPTY("[entry.SumofTickets]") / ZEROIFEMPTY("[entry.numberofrecords]"), 2)</ac:parameter>
+        <ac:parameter ac:name="action">Set expression</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">SumofTickets,Average</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">
+      <strong>Number of Tickets rules</strong>
+    </p>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+    <p class="auto-cursor-target">Green Status To <ac:structured-macro ac:macro-id="12c745da-892f-4c95-a2d5-ce42e85d21fb" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">NumberofTickets1To</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Number of tickets Green status (To)</ac:parameter>
+        <ac:parameter ac:name="values">20</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Value for Green Status <ac:structured-macro ac:macro-id="0bfd5dd6-29b6-4c1e-bdec-0241852f6075" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">TicketsScoringGreen</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Tickets Scoring for Green status</ac:parameter>
+        <ac:parameter ac:name="values">0</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Number of tickets Yellow status (From) <ac:structured-macro ac:macro-id="061cdd49-0730-428c-bb4a-3c548def55c9" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">NumberofTickets2From</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Number of tickets Yellow status (From)</ac:parameter>
+        <ac:parameter ac:name="values">21</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Number of tickets Yellow status (To) <ac:structured-macro ac:macro-id="41890aa9-d146-4739-90c9-0df549eeca49" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">NumberofTickets2To</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Number of tickets Yellow status (To) </ac:parameter>
+        <ac:parameter ac:name="values">40</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Value for Yellow Status <ac:structured-macro ac:macro-id="493c7aac-b1ab-44d6-94d5-9379f9e27ba5" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">TicketsScoringYellow</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Value for Yellow Status</ac:parameter>
+        <ac:parameter ac:name="values">1</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Number of tickets Yellow status (From) <ac:structured-macro ac:macro-id="f83e1b67-76ed-44a4-a610-0fa7e71cd8d2" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">NumberofTickets3From</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Number of tickets Red status (From)</ac:parameter>
+        <ac:parameter ac:name="values">41</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Value for Red Status <ac:structured-macro ac:macro-id="4c3acad1-e671-4ed7-940f-17a4b05a7147" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px</ac:parameter>
+        <ac:parameter ac:name="fieldName">TicketsScoringRed</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Value for Red Status</ac:parameter>
+        <ac:parameter ac:name="values">2</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Tickets Scoring Result <ac:structured-macro ac:macro-id="d3ff64c1-695a-47c2-b6b7-6759caf12c66" ac:name="confiform-field-definition" ac:schema-version="1">
+        <ac:parameter ac:name="css">width:50px;background-color:green</ac:parameter>
+        <ac:parameter ac:name="fieldName">TicketsScoringResult</ac:parameter>
+        <ac:parameter ac:name="fieldLabel">Number of Tickets Result</ac:parameter>
+        <ac:parameter ac:name="type">hidden</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <p class="auto-cursor-target">Tickets Scoring Rule <ac:structured-macro ac:macro-id="fe7a82a8-3227-4ace-92de-a26f51f987ad" ac:name="confiform-field-definition-rules" ac:schema-version="1">
+        <ac:parameter ac:name="values">TicketsScoringResult=IF(ZEROIFEMPTY("[entry.CopyAverage]")&lt;=ZEROIFEMPTY("[entry.NumberofTickets1To]"),ZEROIFEMPTY("[entry.TicketsScoringGreen]"),IF(ZEROIFEMPTY("[entry.CopyAverage]")&gt;=ZEROIFEMPTY("[entry.NumberofTickets2From]") &amp;&amp; ZEROIFEMPTY("[entry.CopyAverage]")&lt;=ZEROIFEMPTY("[entry.NumberofTickets2To]"),ZEROIFEMPTY("[entry.TicketsScoringYellow]"),IF(ZEROIFEMPTY("[entry.CopyAverage]")&gt;=ZEROIFEMPTY("[entry.NumberofTickets3From]"),ZEROIFEMPTY("[entry.TicketsScoringRed]"),0)))</ac:parameter>
+        <ac:parameter ac:name="action">Set expression</ac:parameter>
+        <ac:parameter ac:name="actionFieldName">TicketsScoringGreen,TicketsScoringYellow,TicketsScoringRed,CopyAverage,NumberofTickets1From,NumberofTickets2From,NumberofTickets2To,NumberofTickets3From</ac:parameter>
+      </ac:structured-macro>
+    </p>
+    <ac:structured-macro ac:macro-id="7b07c431-8e5e-428d-9ae2-d96aee036915" ac:name="confiform-entry-register" ac:schema-version="1">
+      <ac:parameter ac:name="formName">ProductRegistration</ac:parameter>
+      <ac:parameter ac:name="type">Embedded</ac:parameter>
+      <ac:parameter ac:name="embedded">true</ac:parameter>
+      <ac:parameter ac:name="atlassian-macro-output-type">INLINE</ac:parameter>
+      <ac:rich-text-body>
+        <p>
+          <br/>
+        </p>
+      </ac:rich-text-body>
+    </ac:structured-macro>
+    <p class="auto-cursor-target">
+      <br/>
+    </p>
+  </ac:rich-text-body>
+</ac:structured-macro>
+<p class="auto-cursor-target">
+  <br/>
+</p>
+<p class="auto-cursor-target">
+  <br/>
+</p>
+<p>
+  <br/>
+</p>
+<p>
+  <br/>
+</p>
+<p>
+  <br/>
+</p>
+<p>
+  <br/>
+</p>
+<p>
+  <br/>
+</p>
+<p>
+  <br/>
+</p>
+<p>
+  <br/>
+</p>
